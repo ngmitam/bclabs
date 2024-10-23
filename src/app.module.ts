@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { PricesModule } from './prices/prices.module';
+import { Price } from './prices/price.entity';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -12,10 +15,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'postgres',
       password: 'postgres',
       database: 'postgres',
-      entities: [],
+      entities: [Price],
       synchronize: true,
       autoLoadEntities: true,
     }),
+    ScheduleModule.forRoot(),
+    PricesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
