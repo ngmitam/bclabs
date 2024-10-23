@@ -1,0 +1,17 @@
+include:
+  - infra.yaml
+
+services:
+  app-dev:
+    image: app-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    restart: always
+    container_name: app-dev
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    volumes:
+      - ./src:/app/src

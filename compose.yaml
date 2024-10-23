@@ -1,0 +1,15 @@
+include:
+  - infra.yaml
+
+services:
+  app:
+    image: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    container_name: app
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
