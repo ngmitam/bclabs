@@ -17,7 +17,6 @@ services:
       - ./src:/app/src
 
   pgadmin:
-    pgadmin:
     image: dpage/pgadmin4
     restart: always
     container_name: nest-pgadmin4
