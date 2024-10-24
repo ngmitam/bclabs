@@ -15,6 +15,11 @@ Set Moralis API key in `.env`
 
 ```sh
 MORALIS_API_KEY=#Moralis api key
+EMAIL_HOST=#
+EMAIL_PORT=#
+EMAIL_USER=#
+EMAIL_PASS=#
+ADMIN_EMAIL_ADDRESS=noreply@bclabs.co.kr
 ```
 
 - cmd
@@ -29,10 +34,21 @@ Set Moralis API key in `.env`
 
 ```sh
 MORALIS_API_KEY=#Moralis api key
+EMAIL_HOST=#
+EMAIL_PORT=#
+EMAIL_USER=#
+EMAIL_PASS=#
+ADMIN_EMAIL_ADDRESS=noreply@bclabs.co.kr
 ```
 
 - cmd
 
 ```shell
 docker compose up --build
+```
+
+## Document
+
+```shell
+http://localhost:3000/docs
 ```

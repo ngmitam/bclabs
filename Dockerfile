@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --force
 
 COPY . .
 
@@ -18,8 +18,10 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --production
+RUN npm install --production --force
 
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/EMAIL_TEMPLATES ./EMAIL_TEMPLATES
+COPY ./.env ./.env
 
 CMD ["node", "dist/main"]

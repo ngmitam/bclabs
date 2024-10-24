@@ -9,6 +9,9 @@ services:
       dockerfile: Dockerfile
     restart: always
     container_name: app
+    environment:
+      - NODE_ENV=production
+      - RECEIVER_EMAIL=hyperhire_assignment@hyperhire.in
     ports:
       - '3000:3000'
     depends_on:

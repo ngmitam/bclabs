@@ -9,6 +9,9 @@ services:
       dockerfile: Dockerfile.dev
     restart: always
     container_name: app-dev
+    environment:
+      - NODE_ENV=development
+      - RECEIVER_EMAIL=ngmitamit@gmail.com
     ports:
       - '3000:3000'
     depends_on:

@@ -6,10 +6,13 @@ import { PricesModule } from './prices/prices.module';
 import { Price } from './prices/price.entity';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ConfigModule } from '@nestjs/config';
+import { MailsModule } from './mails/mails.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'db',
@@ -23,6 +26,7 @@ import { ConfigModule } from '@nestjs/config';
     }),
     ScheduleModule.forRoot(),
     PricesModule,
+    MailsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
