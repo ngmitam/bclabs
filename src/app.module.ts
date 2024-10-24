@@ -7,6 +7,7 @@ import { Price } from './prices/price.entity';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ConfigModule } from '@nestjs/config';
 import { MailsModule } from './mails/mails.module';
+import { AlertsModule } from './alerts/alerts.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { MailsModule } from './mails/mails.module';
     ScheduleModule.forRoot(),
     PricesModule,
     MailsModule,
+    AlertsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

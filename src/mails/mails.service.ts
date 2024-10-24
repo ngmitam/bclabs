@@ -31,7 +31,10 @@ export class MailsService {
   }
 
   async sendReachingPriceAlert(to: string, chain: string, price: number) {
-    const templateFile = join(__dirname, '../../EMAIL_TEMPLATES/Reaching.pug');
+    const templateFile = join(
+      __dirname,
+      '../../EMAIL_TEMPLATES/Reaching.price.pug',
+    );
     const htmlBody = this.pugRenderFile(templateFile, { chain, price });
     return this.mailerService.sendMail({
       to,

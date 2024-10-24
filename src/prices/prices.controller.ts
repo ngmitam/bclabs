@@ -11,7 +11,10 @@ export class PricesController {
   @ApiOperation({
     summary: 'Get prices of each hour (within 24hours) by chain',
   })
-  @ApiQuery({ name: 'chain', type: String })
+  @ApiQuery({
+    name: 'chain',
+    schema: { enum: ['ethereum', 'polygon', 'bitcoin'] },
+  })
   @ApiResponse({ status: 200, type: [Price] })
   @Get('/history')
   history(@Query('chain') chain) {
